@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>Es 3</title>
+    </head>
+    <body>
+        <h1>JS ES 3</h1>
+        <h2>Simple calculator</h2>
+
+        <table style="border:solid" id="tab">
+            <tr>
+                <td>N</td>
+            </tr>
+
+        </table>
+
+        inserisci un numero: <input id='in' type='text'>
+        <button id='btn'>add</button>
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <script>
+            $("#btn").click(function() {
+                $("#tab").append("<tr><td>" + $("#in").val() + "</td></tr>");
+                $("#in").val("");
+            });
+        </script>
+    </body>
+</html>
