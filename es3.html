@@ -28,31 +28,35 @@
         <script>
             $("#add").click(function() {
                 var sum = parseInt($("#first").val()) + parseInt($("#second").val());
-                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + "+" + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + sum + "</td>" + "</tr>");
+                addToTable(sum, "+");
                 $("#first").val("");
                 $("#second").val("");
             });
 
             $("#subtr").click(function() {
                 var subtr = parseInt($("#first").val()) - parseInt($("#second").val());
-                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + "-" + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + subtr + "</td>" + "</tr>");
+                addToTable(subtr, "-");
                 $("#first").val("");
                 $("#second").val("");
             });
 
             $("#multiply").click(function() {
-                var subtr = parseInt($("#first").val()) * parseInt($("#second").val());
-                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + "*" + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + subtr + "</td>" + "</tr>");
+                var mult = parseInt($("#first").val()) * parseInt($("#second").val());
+                addToTable(mult, "*");
                 $("#first").val("");
                 $("#second").val("");
             });
 
             $("#divide").click(function() {
-                var subtr = parseInt($("#first").val()) / parseInt($("#second").val());
-                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + "/" + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + subtr + "</td>" + "</tr>");
+                var divide = parseInt($("#first").val()) / parseInt($("#second").val());
+                addToTable(divide, "/");
                 $("#first").val("");
                 $("#second").val("");
             });
+
+            function addToTable(val, sign) {
+                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + sign + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + val + "</td>" + "</tr>");
+            }
         </script>
     </body>
 </html>
