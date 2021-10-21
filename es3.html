@@ -6,21 +6,52 @@
         <h1>JS ES 3</h1>
         <h2>Simple calculator</h2>
 
-        <table style="border:solid" id="tab">
+        <table style="border:solid;" id="tab">
             <tr>
-                <td>N</td>
+                <td>N1</td>
+                <td>Sign</td>
+                <td>N2</td>
+                <td>Result</td>
             </tr>
 
         </table>
 
-        inserisci un numero: <input id='in' type='text'>
-        <button id='btn'>add</button>
+        inserisci il primo numero: <input id='first' type='text'><br>
+        inserisci il secondo numero: <input id='second' type='text'><br>
+
+        <button id='add'>add</button>
+        <button id='subtr'>subtract</button>
+        <button id='multiply'>multiply</button>
+        <button id='divide'>divide</button>
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
         <script>
-            $("#btn").click(function() {
-                $("#tab").append("<tr><td>" + $("#in").val() + "</td></tr>");
-                $("#in").val("");
+            $("#add").click(function() {
+                var sum = parseInt($("#first").val()) + parseInt($("#second").val());
+                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + "+" + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + sum + "</td>" + "</tr>");
+                $("#first").val("");
+                $("#second").val("");
+            });
+
+            $("#subtr").click(function() {
+                var subtr = parseInt($("#first").val()) - parseInt($("#second").val());
+                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + "-" + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + subtr + "</td>" + "</tr>");
+                $("#first").val("");
+                $("#second").val("");
+            });
+
+            $("#multiply").click(function() {
+                var subtr = parseInt($("#first").val()) * parseInt($("#second").val());
+                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + "*" + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + subtr + "</td>" + "</tr>");
+                $("#first").val("");
+                $("#second").val("");
+            });
+
+            $("#divide").click(function() {
+                var subtr = parseInt($("#first").val()) / parseInt($("#second").val());
+                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + "/" + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + subtr + "</td>" + "</tr>");
+                $("#first").val("");
+                $("#second").val("");
             });
         </script>
     </body>
