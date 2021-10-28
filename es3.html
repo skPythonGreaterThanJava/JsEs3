@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>Es 3</title>
+        <style>
+            table, td, th {border: 1px solid};
+        </style>
     </head>
     <body>
         <h1>JS ES 3</h1>
@@ -8,55 +11,24 @@
 
         <table style="border:solid;" id="tab">
             <tr>
-                <td>N1</td>
-                <td>Sign</td>
-                <td>N2</td>
-                <td>Result</td>
+                <th>N1</th>
+                <th>Sign</th>
+                <th>N2</th>
+                <th>Result</th>
             </tr>
 
-        </table>
+        </table><br><br>
 
-        inserisci il primo numero: <input id='first' type='text'><br>
-        inserisci il secondo numero: <input id='second' type='text'><br>
+        inserisci il primo numero: <input id='num1' type='text' placeholder='first number'><br><br>
+        inserisci il secondo numero: <input id='num2' type='text' placeholder='second number'><br><br>
 
-        <button id='add'>add</button>
-        <button id='subtr'>subtract</button>
-        <button id='multiply'>multiply</button>
-        <button id='divide'>divide</button>
+        <button id="btn1">+</button>
+        <button id="btn2">-</button>
+        <button id="btn3">*</button>
+        <button id="btn4">/</button>
+
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script>
-            $("#add").click(function() {
-                var sum = parseInt($("#first").val()) + parseInt($("#second").val());
-                addToTable(sum, "+");
-                $("#first").val("");
-                $("#second").val("");
-            });
-
-            $("#subtr").click(function() {
-                var subtr = parseInt($("#first").val()) - parseInt($("#second").val());
-                addToTable(subtr, "-");
-                $("#first").val("");
-                $("#second").val("");
-            });
-
-            $("#multiply").click(function() {
-                var mult = parseInt($("#first").val()) * parseInt($("#second").val());
-                addToTable(mult, "*");
-                $("#first").val("");
-                $("#second").val("");
-            });
-
-            $("#divide").click(function() {
-                var divide = parseInt($("#first").val()) / parseInt($("#second").val());
-                addToTable(divide, "/");
-                $("#first").val("");
-                $("#second").val("");
-            });
-
-            function addToTable(val, sign) {
-                $("#tab").append("<tr><td>" + $("#first").val() + "</td>" + "<td>" + sign + "</td>" + "<td>" + $("#second").val() + "</td>" + "<td>" + val + "</td>" + "</tr>");
-            }
-        </script>
+        <script src="es3.js"></script>
     </body>
 </html>
