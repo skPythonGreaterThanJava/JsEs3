@@ -1,22 +1,7 @@
-$("#btn1").click(function() {
-    operate("+");
-});
-
-$("#btn2").click(function() {
-    operate("-");
-});
-
-$("#btn3").click(function() {
-    operate("*");
-});
-
-$("#btn4").click(function() {
-    operate("/");
-});
-
-function operate(sign) {
+$("button").click(function() {
     var input1 = $('#num1');
     var input2 = $('#num2');
+    var sign = $(this).val();
     if(input1.val() && input2.val()) {
         var n1 = parseInt(input1.val());
         var n2 = parseInt(input2.val());
@@ -43,4 +28,4 @@ function operate(sign) {
         input1.val("");
         input2.val("");
     }
-};
+});
