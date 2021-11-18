@@ -10,12 +10,7 @@
         <h2>Simple calculator</h2>
 
         <table style="border:solid;" id="tab">
-            <tr>
-                <th>N1</th>
-                <th>Sign</th>
-                <th>N2</th>
-                <th>Result</th>
-            </tr>
+            
 
         </table><br><br>
 
@@ -35,12 +30,6 @@
 
         </script>
         <script>
-            
-
-            storage.getItem("1").forEach(element => {
-                var string = "<tr><td>" + element.split('; ')[0] + "</td><td>" + element.split('; ')[1] + "</td><td>" + element.split('; ')[2] + "</td><td>" + element.split('; ')[3] + "</td></tr>";
-                $('#tab').append(string);
-            });
                 
         </script>
         <script src="es3.js"></script>

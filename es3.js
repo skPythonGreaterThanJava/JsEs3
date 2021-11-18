@@ -1,4 +1,6 @@
-var vals = [];
+var tablet = "<tr> <th>N1</th> <th>Sign</th> <th>N2</th> <th>Result</th> </tr>" + storage.getItem("1");
+
+$("#tab").append(tablet);
 
 $("button").click(function() {
     var input1 = $('#num1');
@@ -26,11 +28,10 @@ $("button").click(function() {
                 break;
         };
         var string = "<tr><td>" + n1 + "</td><td>" + sign + "</td><td>" + n2 + "</td><td>" + result + "</td></tr>";
+        tablet += string;
         $('#tab').append(string);
-
-        vals.push(input1.val() + "; " + sign + "; " + input2.val() + "; " + result);
-        storage.setItem("1", vals);
-        console.log(storage.getItem("1"));
+        storage.setItem("1", storage.getItem("1") + string);
+        
         input1.val("");
         input2.val("");
     }
